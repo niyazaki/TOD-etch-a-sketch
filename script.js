@@ -18,14 +18,19 @@ function createGrid(squareSize) {
         grid.style.height,
         grid.style.width,
         parseInt(grid.style.height),
-        parseInt(grid.style.width)
+        parseInt(grid.style.width),
+        toString(parseInt(grid.style.height) / squareSize) + "px"
       );
-      col.style.height =
-        toString(parseInt(grid.style.height) / squareSize) + "px";
-      col.style.width =
-        toString(parseInt(grid.style.width) / squareSize) + "px";
+      col.style.height = parseInt(grid.style.height) / squareSize + "px";
+      col.style.width = parseInt(grid.style.width) / squareSize + "px";
       console.log(col.style.height, col.style.width);
       row.appendChild(col);
+      console.log(
+        grid.style.height,
+        grid.style.width,
+        parseInt(col.style.height),
+        parseInt(col.style.width)
+      );
     }
     console.log("grid");
     grid.appendChild(row);
@@ -33,4 +38,4 @@ function createGrid(squareSize) {
   }
 }
 
-createGrid(16);
+createGrid(10);
